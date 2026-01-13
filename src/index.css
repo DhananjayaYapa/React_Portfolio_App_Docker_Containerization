@@ -1,0 +1,99 @@
+/* Base box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  background-color: rgba(50, 50, 50, 0.3);
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 300 11px/1.4 'Helvetica Neue', sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  overflow: hidden;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+/* Light mode body background override */
+body.light-mode {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Dark mode body ensures transparent for aurora */
+body.dark-mode {
+  background: transparent;
+}
+
+.dashboard {
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 1200px) {
+  body {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 50%;
+  }
+
+  .dashboard {
+    margin-top: 100px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 45%;
+  }
+}
